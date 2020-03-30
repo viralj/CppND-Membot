@@ -7,18 +7,18 @@
 
 // forward declarations
 class ChatBot;
+
 class GraphEdge;
+
 class GraphNode;
 
-class ChatLogic
-{
+class ChatLogic {
 private:
     //// STUDENT CODE
     ////
 
     // data handles (owned)
-    std::vector<GraphNode *> _nodes;
-    std::vector<GraphEdge *> _edges;
+    std::vector <std::unique_ptr<GraphNode>> _nodes;
 
     ////
     //// EOF STUDENT CODE
@@ -29,25 +29,30 @@ private:
     ChatBotPanelDialog *_panelDialog;
 
     // proprietary type definitions
-    typedef std::vector<std::pair<std::string, std::string>> tokenlist;
+    typedef std::vector <std::pair<std::string, std::string>> tokenlist;
 
     // proprietary functions
-    template <typename T>
+    template<typename T>
     void AddAllTokensToElement(std::string tokenID, tokenlist &tokens, T &element);
 
 public:
     // constructor / destructor
     ChatLogic();
+
     ~ChatLogic();
 
     // getter / setter
     void SetPanelDialogHandle(ChatBotPanelDialog *panelDialog);
+
     void SetChatbotHandle(ChatBot *chatbot);
 
     // proprietary functions
     void LoadAnswerGraphFromFile(std::string filename);
+
     void SendMessageToChatbot(std::string message);
+
     void SendMessageToUser(std::string message);
+
     wxBitmap *GetImageFromChatbot();
 };
 
