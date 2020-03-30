@@ -1,0 +1,3 @@
+/root/Desktop/CppND-Membot/build/CMakeFiles/rebuild_cache.dir
+/root/Desktop/CppND-Membot/build/CMakeFiles/membot.dir
+/root/Desktop/CppND-Membot/build/CMakeFiles/edit_cache.dir
